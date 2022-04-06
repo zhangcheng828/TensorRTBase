@@ -1,4 +1,5 @@
 # TensorRTBase
+TensorRT的封装类，支持caffe，onnx文件转化，支持导出序列化引擎。声明文件位于common/TRTModelBase.h，对应
 封装类有着下列方法实现
 
 ## ModelType枚举类
@@ -16,14 +17,14 @@
 
 ## 受保护的方法（需要重写的接口）
 ### processInput(); 
-读取数据，如图片点云，并将其存到buffers缓存中。此接口需要子类重写。
+读取数据，如图片，点云等，并将其存到buffers缓存中。此接口需要子类重写。
 ### processInput(); 
 将最后的输出结果，如one-hot编码处理为自己需要的格式。此接口需要子类重写。
 
 ## 公有方法
 ### TRTModelBase构造函数
-直接调用engineInitlization方法
+直接调用engineInitlization方法。
 ### forward();
-模拟神经网络的前向传播
+模拟神经网络的前向传播。
 ### saveEngine();
-保存序列化引擎
+保存序列化引擎。
